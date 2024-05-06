@@ -1,0 +1,43 @@
+<h3>Mis Clientes</h3>
+<table class="table table-responsive" >
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cedula</th>
+            <th>Fecha Nacimiento</th>
+            <th>CreateAT</th>
+            <th>Email</th>            
+            <th>Direccion</th>
+            <th>Activo</th>
+        </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of clientes">
+
+        <th>{{item.clienteId}}</th>
+        <th>{{item.name}}</th>
+        <th>{{item.lastName}}</th>
+        <th>{{item.cedula}}</th>
+        <th>{{item.birthDate}}</th>
+        <th>{{item.createAt}}</th>  
+        <th>{{item.email}}</th>               
+        <th>{{item.addresses}}</th>
+        <ng-container *ngIf="item.active then botonActivar; else botonDesactivar " ></ng-container>
+        <ng-template #botonActivar>
+           <th> <button>Activar</button></th>
+        </ng-template>
+        <ng-template #botonDesactivar>
+            <th><button [ngClass]="{btndanger:item.active }">Desactivar</button></th>
+        </ng-template>
+
+        </tr>
+      
+    </tbody>
+</table>
+
+
+
+

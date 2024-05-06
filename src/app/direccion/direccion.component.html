@@ -1,0 +1,43 @@
+<h3>Direcciones</h3>
+    <table class="table table-responsive" >       
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Alias</th>
+            <th>Calle</th>
+            <th>Ciudad</th>
+            <th>Estado</th>
+            <th>Codigo Postal</th>
+            <th>Pais</th>            
+            <th>CreateAt</th>  
+            <th>ClienteID</th>          
+            <th>Activo</th>            
+            
+        </tr>
+        </thead>
+         <tr *ngFor="let item of direccion">
+            <th>{{item.addressId}}</th>
+            <th>{{item.alias}}</th>
+            <th>{{item.street}}</th>
+            <th>{{item.city}}</th>
+            <th>{{item.state}}</th>
+            <th>{{item.zipCode}}</th>
+            <th>{{item.country}}</th>
+            <th>{{item.createAt}}</th>            
+            <th>{{item.clienteId}}</th>
+            <ng-container *ngIf="item.active then botonActivar; else botonDesactivar " ></ng-container>
+            <ng-template #botonActivar>
+               <th> <button>Activar</button></th>
+            </ng-template>
+            <ng-template #botonDesactivar>
+                <th><button [ngClass]="{btndanger:item.active }">Desactivar</button></th>
+            </ng-template>
+            
+          
+        </tr>
+        <tbody>
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
