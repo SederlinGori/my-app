@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Direccion } from '../../../clases/direccion';
 import { ActivatedRoute } from '@angular/router';
+import { Direccion } from '../../../../clases/direccion';
 
 @Component({
   selector: 'app-cliente-direcciones',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './cliente-direcciones.component.css'
 })
 export class ClienteDireccionesComponent {
-  direccion: Direccion[] = [
+  direcciones: Direccion[] = [
     {
       addressId: 0,
       alias: 'Casa',

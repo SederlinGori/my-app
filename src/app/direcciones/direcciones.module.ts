@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DireccionesRoutingModule } from './direcciones-routing.module';
-import { DireccionComponent } from '../direccion/direccion.component';
+import { DireccionComponent } from '../modulo/direccion/direccion.component';
 
 
 @NgModule({

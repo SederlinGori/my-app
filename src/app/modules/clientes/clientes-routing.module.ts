@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import path from 'path';
 import { ClientesComponent } from './clientes/clientes.component';
-import { ClientedetailsComponent } from './clientedetails/clientedetails.component';
-import { ClienteDireccionesComponent } from './cliente-direcciones/cliente-direcciones.component';
+import { ClienteDireccionesComponent } from './clientes/cliente-direcciones/cliente-direcciones.component';
+import { ClientedetailsComponent } from './clientes/clientedetails/clientedetails.component';
+
 
 const routes: Routes = [
 {
