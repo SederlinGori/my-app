@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { Clientes } from '../clases/clientes';
-import { Direccion } from '../clases/direccion';
 import { CommonModule } from '@angular/common';
+import { Clientes } from '../../../clases/clientes';
+import { ActivatedRoute } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-clientes',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,  
   templateUrl: './clientes.component.html',
   styleUrl: './clientes.component.css'
 })
@@ -70,5 +72,6 @@ export class ClientesComponent {
 
 
   ]
+  
   
 }

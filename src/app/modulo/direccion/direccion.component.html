@@ -12,6 +12,7 @@
             <th>CreateAt</th>  
             <th>ClienteID</th>          
             <th>Activo</th>            
+            <th>Detalle</th>            
             
         </tr>
         </thead>
@@ -32,6 +33,9 @@
             <ng-template #botonDesactivar>
                 <th><button [ngClass]="{btndanger:item.active }">Desactivar</button></th>
             </ng-template>
+            <td><a class="btn btn-primary" [routerLink]="['./direccion', item.addressId]"
+                routerLinkActive="router-link-active">Ver</a></td>
+        
             
           
         </tr>

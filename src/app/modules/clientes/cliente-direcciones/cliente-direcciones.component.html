@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 30rem;">
+        <div class="card-header fw-bold fs-4"> 
+                           
+                <div class="card-header fw-bold fs-4">
+                    {{direccion[0].alias}}
+                </div>              
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Calle: </b> {{direccion[0].street}}</li>
+                    <li class="list-group-item"><b>Ciudad: </b> {{direccion[0].city}}</li>
+                    <li class="list-group-item"><b>Estado: </b> {{direccion[0].state}}</li>
+                    <li class="list-group-item"><b>Codigo Postal: </b> {{direccion[0].zipCode}}</li>
+                    <li class="list-group-item"><b>Pais: </b> {{direccion[0].country}}</li>
+                    <li class="list-group-item"><b>Creada el: </b> {{direccion[0].createAt | date}}</li>
+                </ul>
+            
+        <div class="card-body d-flex justify-content-end">
+           
+            <a href="#" class="btn btn-primary">Editar</a>
+        </div>
+    </div>
+</div>
