@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Direccion } from './clases/direccion';
 import exp from 'constants';
 import { ClientesModule } from './modules/clientes/clientes.module';
-import { DireccionesModule } from './direcciones/direcciones.module';
+import { DireccionesModule } from './modulo/direcciones/direcciones.module';
 
 @Component({
   selector: 'app-root',

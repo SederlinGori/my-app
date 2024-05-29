@@ -1,5 +1,6 @@
+<ng-container *ngIf="direcciones | async as direccion; else direccionNoEncontrada">
 <div class="d-flex justify-content-center">
-    <div class="card" style="width: 30rem;" *ngFor="let direccion of direcciones">
+    <div class="card" style="width: 30rem;">
         <div class="card-header fw-bold fs-4">
             {{direccion.alias}}
         </div>
@@ -16,3 +17,10 @@
         </div>
     </div>
 </div>
+</ng-container>
+
+<ng-template #direccionNoEncontrada>
+    <div class="alert alert-danger text-center" role="alert">
+        Direccion no encontrada
+    </div>
+</ng-template>

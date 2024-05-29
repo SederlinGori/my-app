@@ -1,5 +1,5 @@
 <h3>Mis Clientes</h3>
-<table class="table table-responsive table-striped table-inverse table-hover " >
+<table class="table table-responsive  " >
     <thead>
         <tr>
             <th>ID</th>
@@ -17,28 +17,35 @@
         </tr>
 
     </thead>
-    <tbody>
+    <tbody *ngIf="listaclientes | async as clientes">
       <tr *ngFor="let item of clientes">
 
-        <th>{{item.clienteId}}</th>
-        <th>{{item.name}}</th>
-        <th>{{item.lastName}}</th>
-        <th>{{item.cedula}}</th>
-        <th>{{item.birthDate}}</th>
-        <th>{{item.createAt}}</th>  
-        <th>{{item.email}}</th>               
-        <th>{{item.addresses}}</th>
-        <ng-container *ngIf="item.active then botonActivar; else botonDesactivar " ></ng-container>
-        <ng-template #botonActivar>
-           <th> <button>Activar</button></th>
-        </ng-template>
-        <ng-template #botonDesactivar>
-            <th><button [ngClass]="{btndanger:item.active }">Desactivar</button></th>
-        </ng-template>
+        <td>{{item.clienteId}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.lastName}}</td>
+        <td>{{item.cedula}}</td>
+        <td>{{item.birthDate}}</td>
+        <td>{{item.createAt}}</td>  
+        <td>{{item.email}}</td>               
+        <td>{{item.addresses}}</td>
+
+        <td>
+            <app-estado-boton             
+                [active]="item.active"
+                (activar)="activar(item)"
+                (desactivar)="desactivar(item)">   
+           
+            </app-estado-boton>
+        </td>
+
+        
+
+       
         <td><a class="btn btn-primary" [routerLink]="['./cliente',item.clienteId]"
         routerLinkActive="router-link-active">Ver</a></td>
         <td><a class="btn btn-primary" [routerLink]="['/clientes/cliente-direcciones', item.clienteId]"
          routerLinkActive="router-link-active">Ver</a></td>
+         <th><button class="btn btn-primary ">Editar</button></th>
 
        
         

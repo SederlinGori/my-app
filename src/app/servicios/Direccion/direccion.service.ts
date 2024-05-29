@@ -1,16 +1,12 @@
-import { Component } from '@angular/core';
-
-import { ActivatedRoute } from '@angular/router';
+import { Injectable } from '@angular/core';
 import { Direccion } from '../../clases/direccion';
+import { Observable, of } from 'rxjs';
 
-@Component({
-  selector: 'app-direcciondetails',
-  standalone: false,  
-  templateUrl: './direcciondetails.component.html',
-  styleUrl: './direcciondetails.component.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class DirecciondetailsComponent {
-  direccion: Direccion[] = [
+export class DireccionService {
+  private direccion: Direccion[] = [
     {
       addressId: 0,
       alias: 'Casa',
@@ -70,17 +66,30 @@ export class DirecciondetailsComponent {
       createAt: '2024-01-07',
       clienteId: 4
     }
-
     
   ]
-  direcciones: Direccion= new Direccion();
-  constructor(private Routerdireecion: ActivatedRoute) {
-    this.Routerdireecion.params.subscribe((params)=>{
-      if(params['id']){
-       this.direcciones = this.direccion.find(direccion=>direccion.addressId == params['id']);
-      }
-    })
-   }
 
+  constructor() { }
+
+  getDireccion(): Observable<Direccion[]>{
+   return of(this.direccion)
+  }
+
+  getdireccionId(addressId : number): Observable<Direccion> | undefined{
+    const direccion = this.direccion.find(direccion=> direccion.addressId===addressId)
+    return of(direccion)
+
+  }
+
+  editDireccion(direccionData: Partial<Direccion>): Observable<Direccion | undefined> {
+    const direccionIndex = this.direccion.findIndex(d => d.addressId === direccionData.addressId);
+    if (direccionIndex !== -1) {
+      this.direccion[direccionIndex] = { ...this.direccion[direccionIndex], ...direccionData };
+      return of(this.direccion[direccionIndex]);
+    } else {
+      return of(undefined);
+    }
+  }
+  
 
 }
