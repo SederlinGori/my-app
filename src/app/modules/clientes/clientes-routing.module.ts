@@ -4,6 +4,7 @@ import path from 'path';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClienteDireccionesComponent } from './clientes/cliente-direcciones/cliente-direcciones.component';
 import { ClientedetailsComponent } from './clientes/clientedetails/clientedetails.component';
+import { ClientesformsComponent } from '../../formularios/clientes/clientesforms.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,14 @@ const routes: Routes = [
   path:'cliente-direcciones/:id',
   component: ClienteDireccionesComponent
 
+},
+{
+  path:'forms/:id',
+  component: ClientesformsComponent
+},
+{
+  path:'forms',
+  component:ClientesformsComponent
 }
 
 ];

@@ -1,0 +1,110 @@
+<div class="d-flex justify-content-center">
+    <form class="col-md-5" [formGroup]="formulario" (ngSubmit)="BotonGuardar()">
+       <div class="mb-3">
+        <label for="alias" class="form-label">Alias</label>
+
+        <input
+         formControlName="alias"         
+         type="text" 
+         name="alis"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('alias','Alias')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="street" class="form-label">Calle</label>
+
+        <input
+         formControlName="street"         
+         type="text" 
+         name="street"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('street','Calle')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="city" class="form-label">Ciudad</label>
+
+        <input
+         formControlName="city"         
+         type="text" 
+         name="city"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('city','Ciudad')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="state" class="form-label">Estado</label>
+
+        <input
+         formControlName="state"         
+         type="text" 
+         name="state"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('state','Estado')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="zipCode" class="form-label">Codigo postal</label>
+
+        <input
+         formControlName="zipCode"         
+         type="text" 
+         name="zipCode"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('zipCode','Codigo postal')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="country" class="form-label">Pais</label>
+
+        <input
+         formControlName="country"         
+         type="text" 
+         name="country"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('country','Pais')}}</small>
+
+       </div>
+
+       <div class="mb-3">
+        <label for="createAt" class="form-label">Fecha de creacion</label>
+
+        <input
+         formControlName="createAt"         
+         type="date" 
+         name="createAt"
+         class="form-control"
+         aria-describedby="helpId"
+         />
+
+         <small id="helpId" class="text-danger">{{getError('createAt','Fecha de creacion')}}</small>
+
+       </div>
+       <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</div>
+

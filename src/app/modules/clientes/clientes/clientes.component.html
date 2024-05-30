@@ -45,7 +45,7 @@
         routerLinkActive="router-link-active">Ver</a></td>
         <td><a class="btn btn-primary" [routerLink]="['/clientes/cliente-direcciones', item.clienteId]"
          routerLinkActive="router-link-active">Ver</a></td>
-         <th><button class="btn btn-primary ">Editar</button></th>
+         <th><button class="btn btn-primary" [routerLink]="['./forms', item.clienteId]" routerLinkActive="router-link-active" >Editar</button></th>
 
        
         
@@ -54,6 +54,9 @@
       
     </tbody>
 </table>
+
+<div class="d-flex justify-content-center">
+    <a class="btn btn-primary" [routerLink]="['./forms']" routerLinkActive="router-link-active">Agregar</a>
 
 
 

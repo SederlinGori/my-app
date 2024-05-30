@@ -7,20 +7,23 @@ import { ClientedetailsComponent } from './clientes/clientedetails/clientedetail
 import { ClienteDireccionesComponent } from './clientes/cliente-direcciones/cliente-direcciones.component';
 import { ClientesService } from '../../servicios/Clientes/clientes.service';
 import { EstadoBotonComponent } from '../../estado-boton/estado-boton.component';
+import { ClientesformsComponent } from '../../formularios/clientes/clientesforms.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ClientesComponent,
     ClientedetailsComponent,
     ClienteDireccionesComponent,
-    ClienteDireccionesComponent    
+    ClienteDireccionesComponent,
+    ClientesformsComponent 
   
   ],
   imports: [
     CommonModule,
     ClientesRoutingModule, 
-    EstadoBotonComponent 
-   
+    EstadoBotonComponent ,
+    ReactiveFormsModule   
     
   ],
   providers:[

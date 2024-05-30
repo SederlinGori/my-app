@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DirecciondetailsComponent } from '../direcciondetails/direcciondetails.component';
 import { DireccionComponent } from '../direccion/direccion.component';
+import { DireccionformsComponent } from '../../formularios/direccionforms/direccionforms.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,14 @@ const routes: Routes = [
   {
     path:'direccion/:id',
     component: DirecciondetailsComponent
+  },
+  {
+    path:'forms/:id',
+    component:DireccionformsComponent
+  },
+  {
+    path:'forms',
+    component:DireccionformsComponent
   }
 
 ];

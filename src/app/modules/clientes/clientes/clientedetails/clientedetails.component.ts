@@ -4,6 +4,7 @@ import { Clientes } from '../../../../clases/clientes';
 import { ClientesService } from '../../../../servicios/Clientes/clientes.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-clientedetails',
   standalone: false,  
@@ -33,5 +34,7 @@ export class ClientedetailsComponent {
   desactivar(cliente : Clientes) {
     cliente.active = false;
     this.servicio.editCliente(cliente);
-  }
+  } 
 }
+
+

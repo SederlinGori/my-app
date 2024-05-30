@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { ActivatedRoute } from '@angular/router';
 import { Direccion } from '../../clases/direccion';
 import { Observable } from 'rxjs';
