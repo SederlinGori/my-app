@@ -5,7 +5,7 @@ import { DireccionComponent } from '../direccion/direccion.component';
 import { DireccionService } from '../../servicios/Direccion/direccion.service';
 import { DirecciondetailsComponent } from '../direcciondetails/direcciondetails.component';
 import { EstadoBotonComponent } from '../../estado-boton/estado-boton.component';
-import { DireccionformsComponent } from '../../formularios/direccionforms/direccionforms.component';
+import { DireccionformsComponent } from '../../formularios/direccion/direccionforms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 

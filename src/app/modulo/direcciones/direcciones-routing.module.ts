@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DirecciondetailsComponent } from '../direcciondetails/direcciondetails.component';
 import { DireccionComponent } from '../direccion/direccion.component';
-import { DireccionformsComponent } from '../../formularios/direccionforms/direccionforms.component';
+import { DireccionformsComponent } from '../../formularios/direccion/direccionforms.component';
 
 const routes: Routes = [
   {
