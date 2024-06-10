@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Direccion } from '../../clases/direccion';
 import { Observable } from 'rxjs';
-import { DireccionService } from '../../servicios/Direccion/direccion.service';
+import { Direccion } from '../../../clases/direccion';
+import { DireccionService } from '../../../servicios/Direccion/direccion.service';
 
 @Component({
   selector: 'app-direccion',
@@ -11,13 +11,20 @@ import { DireccionService } from '../../servicios/Direccion/direccion.service';
   styleUrl: './direccion.component.css'
 })
 export class DireccionComponent {
-  listaDirecion: Observable<Direccion[]>;
+  listaDirecion: Direccion[];
 
   constructor(private service : DireccionService){
   }
 
   ngOnInit(){
-    this.listaDirecion= this.service.getDireccion()
+    this.service.getDireccion().subscribe({
+      next:(value)=> {
+        this.listaDirecion=value;
+      },
+      error:(error)=>{
+        console.error(error);
+      }
+    })
   }
   activar(direccion : Direccion) {
     direccion.active = true;

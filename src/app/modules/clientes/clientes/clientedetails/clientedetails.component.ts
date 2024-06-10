@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class ClientedetailsComponent { 
    
-  client: Observable<Clientes>;
+  client:Clientes;
 
   constructor(private detalle :ActivatedRoute, private servicio : ClientesService) { 
    
@@ -22,9 +22,17 @@ export class ClientedetailsComponent {
   ngOnInit(){
     this.detalle.params.subscribe((params) => {
       if(params['id']){
-        this.client = this.servicio.getClienteID(+params['id'])
+        this.servicio.getClienteID(+params['id']).subscribe({
+          next:(value)=>{
+            this.client=(value)
+          },
+          error:(error)=>{
+            console.error(error)
+          }
+        })
       }
-    });
+    })
+    
 
   }
   activar(cliente : Clientes) {

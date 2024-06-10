@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Direccion } from '../../../../clases/direccion';
 import { Observable } from 'rxjs';
 import { DireccionService } from '../../../../servicios/Direccion/direccion.service';
+import { DireccionesRoutingModule } from '../../../../modulo/direcciones-routing.module';
 
 @Component({
   selector: 'app-cliente-direcciones',
@@ -12,15 +13,24 @@ import { DireccionService } from '../../../../servicios/Direccion/direccion.serv
 })
 export class ClienteDireccionesComponent {
 
-  direcciones: Observable<Direccion>;
+  direcciones: Direccion;
+
+  
 
   constructor(private Routerdireecion: ActivatedRoute, private servicios : DireccionService){ }
 
   ngOnInit(){
     this.Routerdireecion.params.subscribe((params)=>{
-      if(params['id']){
-       this.direcciones = this.servicios.getdireccionId(+params['id']) 
-      };
+      if(params['clienteId']){
+        this.servicios.getDireccionesByClientId(+params['clienteId']).subscribe({
+          next:(value)=>{
+            this.direcciones=(value)
+          },
+          error:(error)=>{
+            console.error(error)
+          }
+        })
+      }
       
     })
    }

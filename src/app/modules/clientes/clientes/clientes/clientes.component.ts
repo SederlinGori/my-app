@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Clientes } from '../../../clases/clientes';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, observable } from 'rxjs';
-import { ClientesService } from '../../../servicios/Clientes/clientes.service';
+import { ClientesService } from '../../../../servicios/Clientes/clientes.service';
+import { Clientes } from '../../../../clases/clientes';
+
 
 
 
@@ -15,13 +16,21 @@ import { ClientesService } from '../../../servicios/Clientes/clientes.service';
   styleUrl: './clientes.component.css'
 })
 export class ClientesComponent {
-  listaclientes: Observable<Clientes[]> ;
+  clientes:Clientes[];
 
   constructor(private servicios:ClientesService){    
   }
   
  ngOnInit(){
-  this.listaclientes=this.servicios.getClientes();
+ this.servicios.getClientes().subscribe({
+    next:(value)=> {
+      this.clientes=value;
+    },
+    error:(error)=>{
+      console.error(error);
+    }
+
+  });
  }
  activar(cliente : Clientes) {
   cliente.active = true;

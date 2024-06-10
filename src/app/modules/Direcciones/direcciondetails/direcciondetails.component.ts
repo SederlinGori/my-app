@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Direccion } from '../../clases/direccion';
 import { Observable } from 'rxjs';
-import { DireccionService } from '../../servicios/Direccion/direccion.service';
+import { DireccionService } from '../../../servicios/Direccion/direccion.service';
+import { Direccion } from '../../../clases/direccion';
 
 @Component({
   selector: 'app-direcciondetails',
@@ -12,14 +12,21 @@ import { DireccionService } from '../../servicios/Direccion/direccion.service';
 })
 export class DirecciondetailsComponent {
  
-  direccion: Observable<Direccion>;  
+  direccion: Direccion;  
   constructor(private Routerdireecion: ActivatedRoute, private servicios : DireccionService){ }
 
   ngOnInit(){
     this.Routerdireecion.params.subscribe((params)=>{
       if(params['id']){
-       this.direccion = this.servicios.getdireccionId(+params['id']) 
-      };
+        this.servicios.getdireccionId(+params['id']).subscribe({
+          next:(value)=>{
+            this.direccion=(value)
+          },
+          error:(error)=>{
+            console.error(error)
+          }
+        })
+      }
       
     })
   }

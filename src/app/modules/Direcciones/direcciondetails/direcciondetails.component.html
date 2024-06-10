@@ -1,4 +1,4 @@
-<ng-container *ngIf="direccion | async as direcciones ; else DireccionNoEncontrado ">
+<ng-container *ngIf="direccion  as direcciones ; else DireccionNoEncontrado ">
 <div class="d-flex justify-content-center">
     <div class="card" style="width: 30rem;">
         <div class="card-header fw-bold fs-4">
@@ -10,7 +10,7 @@
             <li class="list-group-item"><b>Estado: </b> {{direcciones.state}}</li>
             <li class="list-group-item"><b>Codigo Postal: </b> {{direcciones.zipCode}}</li>
             <li class="list-group-item"><b>Pais: </b> {{direcciones.country}}</li>
-            <li class="list-group-item"><b>Creada el: </b> {{direcciones.createAt }}</li>
+            <li class="list-group-item"><b>Creada el: </b> {{direcciones.createdAt }}</li>
         </ul>
         <div class="card-body d-flex justify-content-end">
             <app-estado-boton             

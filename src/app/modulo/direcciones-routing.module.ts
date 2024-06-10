@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DirecciondetailsComponent } from '../direcciondetails/direcciondetails.component';
-import { DireccionComponent } from '../direccion/direccion.component';
-import { DireccionformsComponent } from '../../formularios/direccion/direccionforms.component';
+import { DireccionComponent } from '../modules/Direcciones/direccion/direccion.component';
+import { DirecciondetailsComponent } from '../modules/Direcciones/direcciondetails/direcciondetails.component';
+import { DireccionformsComponent } from '../formularios/direccion/direccionforms.component';
 
 const routes: Routes = [
   {

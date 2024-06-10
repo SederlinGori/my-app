@@ -3,7 +3,7 @@
     <form class="col-md-5" [formGroup]="formulario" (ngSubmit)="BotonGuardar()">
        <div class="mb-3">
         <label for="name" class="form-label">Nombre</label>
-
+           
         <input
          formControlName="name"         
          type="text" 
@@ -17,17 +17,17 @@
        </div>
 
        <div class="mb-3">
-        <label for="lastname" class="form-label">Apellido</label>
+        <label for="lastName" class="form-label">Apellido</label>
 
         <input
-         formControlName="lastname"         
+         formControlName="lastName"         
          type="text" 
-         name="lastname"
+         name="lastName"
          class="form-control"
          aria-describedby="helpId"
          />
 
-         <small id="helpId" class="text-danger">{{getError('lastname','apellido')}}</small>
+         <small id="helpId" class="text-danger">{{getError('lastName','apellido')}}</small>
 
        </div>
 
@@ -49,7 +49,7 @@
         <label for="birthDate" class="form-label">Fecha De Nacimiento</label>
         <input
          formControlName="birthDate"         
-         type="date" 
+         type="datetime" 
          name="birthDate"
          class="form-control"
          aria-describedby="helpId"
@@ -60,16 +60,16 @@
        </div>
 
        <div class="mb-3">
-        <label for="createAt" class="form-label">Fecha De creacion</label>
+        <label for="createdAt" class="form-label">Fecha De creacion</label>
         <input
-         formControlName="createAt"         
-         type="date" 
-         name="createAt"
+         formControlName="createdAt"         
+         type="datetime" 
+         name="createdAt"
          class="form-control"
          aria-describedby="helpId"
          />
 
-         <small id="helpId" class="text-danger">{{getError('createAt','Fecha de crecion')}}</small>
+         <small id="helpId" class="text-danger">{{getError('createdAt','Fecha de crecion')}}</small>
 
        </div>
 

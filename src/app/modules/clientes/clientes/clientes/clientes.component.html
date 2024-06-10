@@ -8,16 +8,16 @@
             <th>Cedula</th>
             <th>Fecha Nacimiento</th>
             <th>CreateAT</th>
-            <th>Email</th>            
-            <th>Direccion</th>
+            <th>Email</th>             
             <th>Activo</th>
             <th>Detalle</th>
             <th>Direccion</th>
+         
             
         </tr>
 
     </thead>
-    <tbody *ngIf="listaclientes | async as clientes">
+    <tbody *ngIf="clientes">
       <tr *ngFor="let item of clientes">
 
         <td>{{item.clienteId}}</td>
@@ -25,9 +25,9 @@
         <td>{{item.lastName}}</td>
         <td>{{item.cedula}}</td>
         <td>{{item.birthDate}}</td>
-        <td>{{item.createAt}}</td>  
+        <td>{{item.createdAt}}</td>  
         <td>{{item.email}}</td>               
-        <td>{{item.addresses}}</td>
+        
 
         <td>
             <app-estado-boton             
@@ -43,11 +43,11 @@
        
         <td><a class="btn btn-primary" [routerLink]="['./cliente',item.clienteId]"
         routerLinkActive="router-link-active">Ver</a></td>
-        <td><a class="btn btn-primary" [routerLink]="['/clientes/cliente-direcciones', item.clienteId]"
+        <td><a class="btn btn-primary" [routerLink]="['./cliente-direcciones', item.clienteId]"
          routerLinkActive="router-link-active">Ver</a></td>
          <th><button class="btn btn-primary" [routerLink]="['./forms', item.clienteId]" routerLinkActive="router-link-active" >Editar</button></th>
 
-       
+         
         
 
         </tr>
@@ -57,7 +57,7 @@
 
 <div class="d-flex justify-content-center">
     <a class="btn btn-primary" [routerLink]="['./forms']" routerLinkActive="router-link-active">Agregar</a>
-
+</div>
 
 
 

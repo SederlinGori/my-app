@@ -94,14 +94,14 @@
         <label for="createAt" class="form-label">Fecha de creacion</label>
 
         <input
-         formControlName="createAt"         
-         type="date" 
-         name="createAt"
+         formControlName="createdAt"         
+         type="datetime" 
+         name="createdAt"
          class="form-control"
          aria-describedby="helpId"
          />
 
-         <small id="helpId" class="text-danger">{{getError('createAt','Fecha de creacion')}}</small>
+         <small id="helpId" class="text-danger">{{getError('createdAt','Fecha de creacion')}}</small>
 
        </div>
        <button type="submit" class="btn btn-primary">Guardar</button>

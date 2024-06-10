@@ -5,20 +5,19 @@ export class Clientes {
     lastName: string;
     cedula: string;
     birthDate: Date;
-    createAt: string;
+    createdAt: string;
     email: string;
     active: boolean;
-    addresses: Direccion[];
+   
     constructor() {
         this.clienteId = 0
         this.name = ''
         this.lastName = ''
         this.cedula = ''
         this.birthDate = new Date()
-        this.createAt = ''
+        this.createdAt = ''
         this.email = ''
         this.active = true
-
-        this.addresses = []
+      
     }
 }

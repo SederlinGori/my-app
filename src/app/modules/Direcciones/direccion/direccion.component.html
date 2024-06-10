@@ -19,7 +19,7 @@
             
         </tr>
         </thead>
-        <tbody *ngIf="listaDirecion | async as direccion">
+        <tbody *ngIf="listaDirecion as direccion">
          <tr *ngFor="let item of direccion">
             <td>{{item.addressId}}</td>
             <td>{{item.alias}}</td>
@@ -28,7 +28,7 @@
             <td>{{item.state}}</td>
             <td>{{item.zipCode}}</td>
             <td>{{item.country}}</td>
-            <td>{{item.createAt}}</td>            
+            <td>{{item.createdAt}}</td>            
             <td>{{item.clienteId}}</td>
             
             <td>
